@@ -30,9 +30,9 @@ class Tooltip extends Component {
   }
 
   overflowCheck() {
+    let domNode = this.tooltipBox;
     let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    let domNode = ReactDOM.findDOMNode(this.refs.tooltip);
     let topBoundary = domNode.getBoundingClientRect().top;
     let bottomBoundary = (domNode.getBoundingClientRect().top + domNode.getBoundingClientRect().height);
     let leftBoundary = domNode.getBoundingClientRect().left;
@@ -76,7 +76,7 @@ class Tooltip extends Component {
   	return(
     <span className="tooltip-wrapper" onClick={(event)=>this.show(event)} onMouseLeave={this.hide}>
       {this.props.children}
-      <span className={this.state.visibility + " tooltip-fadein " + this.state.position + " " + this.state.fadein} ref="tooltip"> {this.props.message} 
+      <span className={this.state.visibility + " tooltip-fadein " + this.state.position + " " + this.state.fadein} ref={(span) => { this.tooltipBox = span }}> {this.props.message} 
         <span className={this.state.arrow +" tooltip-fadein-" + this.state.arrow}></span>
       </span>
     </span>
