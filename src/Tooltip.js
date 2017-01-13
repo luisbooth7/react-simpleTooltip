@@ -103,6 +103,3 @@ class Tooltip extends Component {
 }
 
 export default Tooltip;
-
-
-/* onMouseLeave={()=>{setTimeout(this.hide.bind(this), 200);} */
