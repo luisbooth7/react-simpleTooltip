@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 
 class Tooltip extends Component {
   
@@ -20,9 +19,11 @@ class Tooltip extends Component {
 
   show(event) {
     event.preventDefault();
-    this.setState({position: 'tooltip-' + this.props.position});
-    this.setState({arrow: 'arrow-'  + this.props.position});
-    this.setState({visibility: 'tooltip-show'});
+    this.setState({
+      position: 'tooltip-' + this.props.position,
+      arrow: 'arrow-'  + this.props.position,
+      visibility: 'tooltip-show'
+    });
   }
 
   hide() {
@@ -42,29 +43,45 @@ class Tooltip extends Component {
       return
 
     if (leftBoundary < 0) {
-      this.setState({position: 'tooltip-right'});
-      this.setState({arrow: 'arrow-right'});
+      this.setState({
+        position: 'tooltip-right',
+        arrow: 'arrow-right'
+      });
     }
+
     if (rightBoundary > width && this.state.position === 'tooltip-right') {
-      this.setState({position: 'tooltip-up'});
-      this.setState({arrow: 'arrow-up'});
+      this.setState({
+        position: 'tooltip-up',
+        arrow: 'arrow-up'
+      });
     }
+
     if (rightBoundary > width) {
-      this.setState({position: 'tooltip-left'});
-      this.setState({arrow: 'arrow-left'});
+      this.setState({
+        position: 'tooltip-left',
+        arrow: 'arrow-left'
+      });
     }
+
     if (leftBoundary < 0 && this.state.position === 'tooltip-left') {
-      this.setState({position: 'tooltip-up'});
-      this.setState({arrow: 'arrow-up'});
+      this.setState({
+        position: 'tooltip-up',
+        arrow: 'arrow-up'
+      });
     }
 
     if (topBoundary < 0) {
-      this.setState({position: 'tooltip-down'});
-      this.setState({arrow: 'arrow-down'});
+      this.setState({
+        position: 'tooltip-down',
+        arrow: 'arrow-down'
+      });
     }
+
     if (bottomBoundary > height) {
-      this.setState({position: 'tooltip-up'});
-      this.setState({arrow: 'arrow-up'});
+      this.setState({
+        position: 'tooltip-up',
+        arrow: 'arrow-up'
+      });
     }
   }
 
@@ -74,12 +91,13 @@ class Tooltip extends Component {
 
   render() {
   	return(
-    <span className="tooltip-wrapper" onClick={(event)=>this.show(event)} onMouseLeave={this.hide}>
-      {this.props.children}
-      <span className={this.state.visibility + " tooltip-fadein " + this.state.position + " " + this.state.fadein} ref={(span) => { this.tooltipBox = span }}> {this.props.message} 
-        <span className={this.state.arrow +" tooltip-fadein-" + this.state.arrow}></span>
+      <span className="tooltip-wrapper" onClick={(event)=>this.show(event)} onMouseLeave={this.hide}>
+        {this.props.children}
+        <span className={this.state.visibility + " tooltip-fadein " + this.state.position + " " + this.state.fadein} ref={(span) => { this.tooltipBox = span }}> {this.props.message} 
+          <span className="extender-up"></span>
+          <span className={this.state.arrow +" tooltip-fadein-" + this.state.arrow}></span>
+        </span>
       </span>
-    </span>
   	);
   }
 }

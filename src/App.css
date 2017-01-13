@@ -1,21 +1,8 @@
-p {
-  width: 320px;
-}
-
-.float-right {
-  float: right;
-  display: inline-block;
-  text-align: left;
-}
+/* TOOLTIP STYLES */
 
 .tooltip-wrapper {
   position: relative;
   display: inline-block;
-}
-
-.tooltip-hide {
-  visibility: hidden;
-  display: none;
 }
 
 .tooltip-show {
@@ -28,6 +15,12 @@ p {
   z-index: 1;
 }
 
+.tooltip-hide {
+  visibility: hidden;
+  display: none;
+}
+
+/* ANIMATION CLASSES */
 .tooltip-fadein {
   background-color: rgba(97,218,251,0);
   animation-name: fadein;
@@ -113,7 +106,7 @@ p {
   border-top: 10px solid transparent;
   top: 50%;
   left: 100%;
-  transform: translate(0%, -50%) rotate(180deg);
+  transform: translate(-5%, -50%) rotate(180deg);
   position: absolute;
 }
 
@@ -133,8 +126,22 @@ p {
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
   left: 0;
-  transform: translate(-100%, -50%);
+  transform: translate(-95%, -50%);
   position: absolute;
+}
+
+/* EXTENDERS */
+.extender-up {
+    width: 100%;
+    height: 10px;
+    /* border-top: 7px solid #61dafb; */
+    /* border-left: 10px solid transparent; */
+    /* border-right: 10px solid transparent; */
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -100%);
+    position: absolute;
+    z-index: 1;
 }
 
 /* TOOLTIP ANIMATIONS */
@@ -175,12 +182,12 @@ p {
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -192,4 +199,14 @@ p {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+p {
+  width: 320px;
+}
+
+.float-right {
+  float: right;
+  display: inline-block;
+  text-align: left;
 }
