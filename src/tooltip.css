@@ -1,0 +1,198 @@
+/* TOOLTIP STYLES */
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-show {
+  visibility: visible;
+  width: 100px;
+  border-radius: 5px;
+  position: absolute;
+  overflow: visible;
+  padding: 5px;
+  z-index: 1;
+}
+
+.tooltip-hide {
+  visibility: hidden;
+  display: none;
+}
+
+/* ANIMATION CLASSES */
+.tooltip-fadein {
+  background-color: rgba(97,218,251,0);
+  animation-name: fadein;
+  animation-duration: 0.2s;
+}
+
+.tooltip-fadein-arrow-up {
+  animation-name: fadein-arrow-up;
+  animation-duration: 0.3s;
+}
+
+.tooltip-fadein-arrow-down {
+  animation-name: fadein-arrow-down;
+  animation-duration: 0.3s;
+}
+
+.tooltip-fadein-arrow-left {
+  animation-name: fadein-arrow-left;
+  animation-duration: 0.3s;
+}
+
+.tooltip-fadein-arrow-right {
+  animation-name: fadein-arrow-right;
+  animation-duration: 0.3s;
+}
+
+/* TOOLTIP UP */
+.tooltip-up {
+  left: 50%;
+  top: -7px;
+  transform: translate(-50%,-100%);
+  color: #222;
+  background-color: #61dafb;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-top: 7px solid #61dafb;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+/* TOOLTIP DOWN */
+.tooltip-down {
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 7px);
+  color: #222;
+  background-color: #61dafb;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-top: 7px solid #61dafb;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -100%) rotate(180deg);
+  position: absolute;
+}
+
+/* TOOLTIP LEFT */
+.tooltip-left {
+  top: 50%;
+  left: 0;
+  transform: translate(-107%, -50%);
+  color: #222;
+  background-color: #61dafb;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-right: 7px solid #61dafb;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  top: 50%;
+  left: 100%;
+  transform: translate(-5%, -50%) rotate(180deg);
+  position: absolute;
+}
+
+/* TOOLTIP RIGHT */
+.tooltip-right {
+  left: 100%;
+  top: 50%;
+  transform: translate(7px, -50%);
+  color: #222;
+  background-color: #61dafb;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-right: 7px solid #61dafb;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  left: 0;
+  transform: translate(-95%, -50%);
+  position: absolute;
+}
+
+/* EXTENDERS */
+.extender-tooltip-up {
+    width: 100%;
+    height: 10px;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 1;
+}
+.extender-tooltip-down {
+    width: 100%;
+    height: 10px;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -100%);
+    position: absolute;
+    z-index: 1;
+}
+.extender-tooltip-left {
+    width: 10px;
+    height: 100%;
+    left: 100%;
+    top: 0%;
+    position: absolute;
+    z-index: 1;
+}
+.extender-tooltip-right {
+    width: 10px;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    transform: translateX(-100%);
+    position: absolute;
+    z-index: 1;
+}
+
+/* TOOLTIP ANIMATIONS */
+@keyframes fadein {
+  from {background-color: rgba(97,218,251,0); color: rgba(0,0,0,0);}
+  to {background-color: rgba(97,218,251,1); color: #222222;}
+}
+
+@keyframes fadein-arrow-up {
+  0% { border-top: 0px solid rgba(97,218,251,0); }
+  40% { border-top: 0px solid rgba(97,218,251,0); }
+  100% { border-top: 7px solid rgba(97,218,251,1); }
+}
+
+@keyframes fadein-arrow-down {
+  0% { border-top: 0px solid rgba(97,218,251,0); }
+  40% { border-top: 0px solid rgba(97,218,251,0); }
+  100% { border-top: 7px solid rgba(97,218,251,1); }
+}
+
+@keyframes fadein-arrow-left {
+  0% { border-right: 0px solid rgba(97,218,251,0); }
+  40% { border-right: 0px solid rgba(97,218,251,0); }
+  100% { border-right: 7px solid rgba(97,218,251,1); }
+}
+
+@keyframes fadein-arrow-right {
+  0% { border-right: 0px solid rgba(97,218,251,0); }
+  40% { border-right: 0px solid rgba(97,218,251,0); }
+  100% { border-right: 7px solid rgba(97,218,251,1); }
+}

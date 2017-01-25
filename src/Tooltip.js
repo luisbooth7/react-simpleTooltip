@@ -94,7 +94,7 @@ class Tooltip extends Component {
       <span className="tooltip-wrapper" onClick={(event)=>this.show(event)} onMouseLeave={this.hide}>
         {this.props.children}
         <span className={this.state.visibility + " tooltip-fadein " + this.state.position + " " + this.state.fadein} ref={(span) => { this.tooltipBox = span }}> {this.props.message} 
-          <span className="extender-up"></span>
+          <span className={"extender-"+this.state.position}></span>
           <span className={this.state.arrow +" tooltip-fadein-" + this.state.arrow}></span>
         </span>
       </span>
