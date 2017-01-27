@@ -200,7 +200,7 @@ class Slider extends Component {
       showArrows,
       showNav,
     } = this.props;
-
+    
     const {
       index,
       transition,
